@@ -48,6 +48,8 @@ for p in points:
                     p.visited = True
                     p2.visited = True
 
+ans = []
 for p in points:
     if p.visited:
-        print(f'{p.id} ')
+        ans.append(p.id)
+print(f'{ans}\nVertex number : {len(ans)}')
