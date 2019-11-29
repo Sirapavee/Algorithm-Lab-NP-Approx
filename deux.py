@@ -45,8 +45,10 @@ for p in points:
             idd = e.p2
             for p2 in points:
                 if idd == p2.id and not p2.visited:
-                    p.visited = True
-                    p2.visited = True
+                    for ee in allEdges:
+                        if ee.visited == False and (p.id == ee.p1 and p2.id == ee.p2) or (p2.id == ee.p1 and p.id == ee.p2):
+                            ee.visited = True
+                            p.visited = True
 
 ans = []
 for p in points:
